@@ -1,0 +1,59 @@
+@keyframes rellenar{
+  to{
+    stroke-dasharray: var(--porcentaje) 100;
+  }
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  .centro {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: 16rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+    justify-content: space-around;
+    width: 80%;
+  }
+  .porcentajes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0px;
+    position: relative;
+  }
+  .porcentajes svg {
+    position: relative;
+    z-index: 1;
+  }
+  .porcentajes span {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: 25px/1em Verdana;
+  }
+.porcentajes {
+  width: 200px;
+  height: 250px;
+  position: relative;
+  background-color: rgb(206, 241, 4);
+}
+.porcentajes svg circle:first-child {
+  stroke: #e6e6e6;
+  stroke-width: 20;
+  fill: none;
+}
+.porcentajes svg circle:last-child {
+  stroke: var(--color);
+  stroke-width: 20;
+  fill: none;
+  stroke-dasharray: 0 100;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  animation: rellenar .35s linear forwards;
+}
